@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>George Petrisis — Mechatronics Engineer</title>
+<meta name="description" content="George Petrisis, Mechatronics Engineering student at the University of Waterloo. Controls software, motion control, and embedded systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F5F4;
+    --ink: #17202E;
+    --muted: #5B6573;
+    --line: #D5DBDF;
+    --signal: #2C5E8C;
+    --setpoint: #C08A00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #121821;
+      --ink: #E6EAEE;
+      --muted: #9AA5B1;
+      --line: #2A3441;
+      --signal: #7FB2E5;
+      --setpoint: #E3B341;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 72px 24px 96px; }
+  a { color: var(--signal); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--setpoint); outline-offset: 3px; }
+
+  /* Hero */
+  h1 {
+    font-size: clamp(44px, 9vw, 76px);
+    font-weight: 800;
+    font-stretch: 75%;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+  .lede { margin-top: 18px; font-size: 20px; color: var(--muted); max-width: 34em; }
+  .contact { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 16px; }
+
+  .response { margin: 48px 0 8px; width: 100%; height: auto; overflow: visible; }
+  .response .axis { stroke: var(--line); stroke-width: 1; }
+  .response .sp { stroke: var(--setpoint); stroke-width: 1.5; stroke-dasharray: 6 5; }
+  .response .curve {
+    fill: none; stroke: var(--signal); stroke-width: 2.5; stroke-linecap: round;
+    stroke-dasharray: 1200; stroke-dashoffset: 1200;
+    animation: draw 2.4s cubic-bezier(.3,.6,.3,1) .3s forwards;
+  }
+  .response text { fill: var(--muted); font-size: 12px; font-family: inherit; }
+  .caption { font-size: 14px; color: var(--muted); }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .response .curve { animation: none; stroke-dashoffset: 0; } }
+
+  /* Sections */
+  section { margin-top: 80px; }
+  h2 {
+    font-size: 28px; font-weight: 700; font-stretch: 85%;
+    padding-bottom: 10px; border-bottom: 2px solid var(--ink); margin-bottom: 28px;
+  }
+  .item { display: grid; grid-template-columns: 150px 1fr; gap: 4px 28px; padding: 20px 0; border-top: 1px solid var(--line); }
+  .item:first-of-type { border-top: 0; padding-top: 0; }
+  .when { font-size: 14px; color: var(--muted); padding-top: 4px; }
+  h3 { font-size: 20px; font-weight: 700; line-height: 1.3; }
+  .role { color: var(--muted); margin-bottom: 8px; }
+  ul { padding-left: 18px; }
+  li { margin: 6px 0; }
+  li::marker { color: var(--signal); }
+
+  .project h3 { font-size: 22px; }
+  .project p { margin: 6px 0 10px; }
+  .media {
+    margin-top: 14px; aspect-ratio: 16 / 9; border: 1px dashed var(--line);
+    display: grid; place-items: center; color: var(--muted); font-size: 14px;
+  }
+
+  .skills { display: grid; grid-template-columns: 150px 1fr; gap: 12px 28px; }
+  .skills dt { font-weight: 600; }
+  .skills dd { color: var(--muted); }
+
+  footer { margin-top: 80px; font-size: 14px; color: var(--muted); }
+
+  @media (max-width: 620px) {
+    main { padding-top: 48px; }
+    .item, .skills { grid-template-columns: 1fr; }
+    .skills dd { margin-bottom: 10px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>George Petrisis</h1>
+    <p class="lede">Mechatronics Engineering student at the University of Waterloo, graduating 2027. I write controls software and build the hardware it runs on.</p>
+    <nav class="contact">
+      <a href="mailto:gpetrisi@uwaterloo.ca">gpetrisi@uwaterloo.ca</a>
+      <a href="https://www.linkedin.com/in/geopet65/">LinkedIn</a>
+      <a href="https://github.com/geoPetr65">GitHub</a>
+      <a href="resume.pdf">Resume (PDF)</a>
+    </nav>
+
+    <svg class="response" viewBox="0 0 700 160" role="img" aria-label="A step response rising to its setpoint with slight overshoot, then settling">
+      <line class="axis" x1="0" y1="140" x2="700" y2="140"/>
+      <line class="sp" x1="0" y1="40" x2="700" y2="40"/>
+      <text x="700" y="30" text-anchor="end">setpoint</text>
+      <path class="curve" d="M0,140 L40,140 C90,140 110,24 160,28 S220,48 260,42 S320,38 360,40.5 S440,40 700,40"/>
+    </svg>
+    <p class="caption">A tuned step response, the kind my Stewart platform's auto-tuner searches for.</p>
+  </header>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="item">
+      <div class="when">Jan 2026 – Aug 2026</div>
+      <div>
+        <h3>Liburdi Automation</h3>
+        <p class="role">Controls Software Developer</p>
+        <ul>
+          <li>Developed features in C#/.NET for LAWS, a large WPF/WinForms welding and motion-control application, following MVVM architecture.</li>
+          <li>Overhauled the additive manufacturing module, delivering client-requested features and modifying toolpath generation in the slicing engine.</li>
+          <li>Built 3D point cloud processing tools that improved automated defect detection.</li>
+          <li>Co-developed a 2D Vision Editor for a multi-camera GigE Vision system, eliminating ~870 ms of camera-switch latency.</li>
+          <li>Brought up motion control on an Omron Power PMAC with EtherCAT stepper drives.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">May 2025 – Aug 2025</div>
+      <div>
+        <h3>University of Waterloo, IQC</h3>
+        <p class="role">Mechanical and Electrical Designer</p>
+        <ul>
+          <li>Designed precision components in Inventor for cryogenic experimental systems.</li>
+          <li>Simulated eigenfrequencies in COMSOL to evaluate design iterations.</li>
+          <li>Fabricated prototypes with CNC machining and 3D printing.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">Sep 2024 – Dec 2024</div>
+      <div>
+        <h3>DCA Controls Inc.</h3>
+        <p class="role">Co-op Controls Technician</p>
+        <ul>
+          <li>Programmed a FANUC robot to automate oil pipe rod handling for lathe processing.</li>
+          <li>Built a PID-controlled PLC system holding liquid nitrogen storage within ±0.5°C.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="when">Jan 2024 – Apr 2024</div>
+      <div>
+        <h3>University of Waterloo, IQC</h3>
+        <p class="role">Mechanical and Electrical Designer</p>
+        <ul>
+          <li>Designed 10+ PCBs in Altium for cryogenic chip testing, with over 98% reliability near absolute zero.</li>
+          <li>Built filters and breakout boxes that improved measurement accuracy by 20%.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="item project">
+      <div class="when">Stewart platform</div>
+      <div>
+        <h3>Stewart Platform with PID Auto-Tuning</h3>
+        <p>A 3-motor Stewart platform with PID motion control. Instead of tuning gains by hand, I wrote an auto-tuner that uses Nelder–Mead optimization over repeated physical trials to converge on the best controller gains.</p>
+        <div class="media">Video coming soon</div>
+      </div>
+    </div>
+
+    <div class="item project">
+      <div class="when">Nov 2022 – Dec 2022</div>
+      <div>
+        <h3>Rubik's Cube Solving Robot</h3>
+        <p>A robot that solves any 2×2 scramble, driven by C-based solving algorithms that find a solution in under 10 ms.</p>
+        <a href="https://www.linkedin.com/posts/geopet65_this-here-is-my-mechatronics-project-from-activity-7022064892908056576-IU83">Watch the video</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Programming</dt><dd>C#, C/C++, Python, Java, TypeScript, JavaScript, VHDL, Ladder Logic, MATLAB, Simulink, LabVIEW</dd>
+      <dt>Software</dt><dd>.NET, WPF, WinForms, XAML, MVVM, Visual Studio, Git, Linux</dd>
+      <dt>Controls</dt><dd>PLCs, FANUC robotics, Omron Power PMAC, EtherCAT, GigE Vision</dd>
+      <dt>Hardware</dt><dd>Altium Designer, VNA, soldering, SolidWorks, Inventor, AutoCAD, Fusion 360, COMSOL, CNC, 3D printing</dd>
+    </dl>
+  </section>
+
+  <footer>George Petrisis, Waterloo, Ontario</footer>
+
+</main>
+</body>
+</html>
